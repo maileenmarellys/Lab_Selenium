@@ -6,19 +6,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-
-@pytest.fixture
-def driver():
-    opciones = webdriver.ChromeOptions()
-    opciones.add_argument("--start-maximized")
-
-    navegador = webdriver.Chrome(options=opciones)
-
-    yield navegador
-
-    navegador.quit()
-
-
 def test_login_exitoso(driver):
     driver.get("https://www.saucedemo.com/")
 
