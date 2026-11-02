@@ -8,6 +8,10 @@ from selenium import webdriver
 def driver(request):
     opciones = webdriver.ChromeOptions()
     opciones.add_argument("--start-maximized")
+    if os.getenv("GITHUB_ACTIONS") == "true":
+    opciones.add_argument("--headless=new")
+    opciones.add_argument("--no-sandbox")
+    opciones.add_argument("--disable-dev-shm-usage")
 
     navegador = webdriver.Chrome(options=opciones)
 
