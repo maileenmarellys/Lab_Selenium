@@ -17,8 +17,7 @@ def test_login_exitoso(driver):
         EC.url_contains("inventory")
     )
 
-    assert "ERROR" in driver.current_url
-
+    assert "inventory" in driver.current_url
     time.sleep(15)
 
 
